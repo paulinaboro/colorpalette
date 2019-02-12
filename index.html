@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Color Palette</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <div class="container">
+    <h1>Pick the main color:</h1>
+    <input id="myColor" type="color" value="#010101" />
+
+    <label for="color-select"><h2>Change Color Charmony:</h2></label>
+
+    <select id="color-select">
+      <option value="">--Please choose an option--</option>
+      <option value="Analogous">Analogous</option>
+      <option value="Monochromatic">Monochromatic</option>
+      <option value="Triad">Triad</option>
+      <option value="Complementary">Complementary</option>
+      <option value="Compound">Compound</option>
+      <option value="Shades">Shades</option>
+      <option value="Custom">Custom</option>
+    </select>
+
+    <div class="button_div"></div>
+      <button type="button" onClick="colorPick()">Select</button>
+    </div>
+<h2> proba commits git</h2>
+    <div class="info">
+      <h3>Selected color:</h3>
+
+      <div id="selected"><p id="demo"></p></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <body></body>
+</html>
