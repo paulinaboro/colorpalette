@@ -27,3 +27,7 @@ colorPick();
 function myTest() {}
 
 function myTest() {}
+function myTest() {}
+function myTest() {}
+function vamosPlaya() {}
+function vamosPlaya() {}
