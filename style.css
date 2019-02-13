@@ -5,3 +5,11 @@
   margin: 1em;
   display: inline-flex;
 }
+
+.hex_color {
+  display: flex;
+}
+
+body {
+  background-color: lightgray;
+}
