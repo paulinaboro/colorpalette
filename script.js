@@ -13,16 +13,75 @@
 
 // function calculateColors() {}
 
-let head = document.querySelector("#head");
+let colorPicker = document.querySelector("#colorPicker");
 
-let selectedColor = document.querySelector(".color1");
+let box1 = document.querySelector(".color1");
 
 let hex_color = document.querySelector(".hex_color");
 
-// background color w color1 will be = to input- head id
-color1.style.backgroundColor = head.value;
+let baseColor, baseColorRGB, baseColorHSL;
 
-head.addEventListener("input", function(pickedColor) {
-  color1.style.backgroundColor = pickedColor.target.value;
-  hex_color.textContent = pickedColor.target.value;
-});
+// background color w color1 will be = to input- head id
+// color1.style.backgroundColor = head.value;
+
+colorPicker.addEventListener("input", colorPick);
+
+function colorPick() {
+  console.log(colorPicker.value);
+  baseColor = colorPicker.value;
+  setBaseColor();
+}
+
+function setBaseColor() {
+  box1.style.background = baseColor;
+  calculateColors();
+}
+
+function calculateColors() {
+  baseColorRGB = hexToRgb(baseColor);
+  baseColorHSL = rgbToHsl(baseColorRGB.r, baseColorRGB.g, baseColorRGB.b);
+  console.log(baseColorRGB, baseColorHSL);
+}
+
+function analog() {}
+// This is a Stackoverflow function
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      }
+    : null;
+}
+
+function rgbToHsl(r, g, b) {
+  (r /= 255), (g /= 255), (b /= 255);
+  var max = Math.max(r, g, b),
+    min = Math.min(r, g, b);
+  var h,
+    s,
+    l = (max + min) / 2;
+
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r:
+        h = (g - b) / d + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / d + 2;
+        break;
+      case b:
+        h = (r - g) / d + 4;
+        break;
+    }
+    h /= 6;
+  }
+
+  return [h, s, l];
+}
