@@ -7,30 +7,19 @@
 // 1.we could have an object of {r, g, b}
 // 2.we could have an object of {h, s ,l}
 
-// ---------function picks the color--------------
+// function colorPick() {}
 
-function colorPick(value) {
-  let colorPick = "";
-  let chosenColor = document.getElementById("myColor").value;
-  document.getElementById("demo").innerHTML = chosenColor;
-  return chosenColor;
-}
-function setBackgroundColor(){
-  document.querySelector(chosenColor).setAttribute("style","background-color:`$colorPick}"
-!important"`);
-}
-document.getElementById("selected").innerHTML = setBackgroundColor(chosenColor);
+// function setBaseColor() {}
 
+// function calculateColors() {}
 
-// ---------function sets the picked/base color--------------
-function setBaseColor() {}
+let head = document.querySelector("#head");
 
-colorPick();
-setBaseColor();
+let selectedColor = document.querySelector(".color1");
 
-//-----------function calculate 4 matching colors----------------
-// function calculateMatchingColors() {}
+// background color w color1 will be = to input- head id
+color1.style.backgroundColor = head.value;
 
-// let baseColor = document.getElementById(chosenColor).value;
-//   document.querySelector.(".selected").setAttribute("style",
-//     "background-color:`${colorPick} !important"`);
+head.addEventListener("input", function(pickedColor) {
+  color1.style.backgroundColor = pickedColor.target.value;
+});
