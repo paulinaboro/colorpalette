@@ -1,6 +1,6 @@
 // ---------------COLOR PALETTE TIPS ----------------
 
-// Create a function colorPick(event)
+// Create a function colorPick
 // Function setBaseColor- this function should also set the other colors
 // Function calculateColors (base)- this function should calculate matching colors and match 4 of them(through different methods).
 // Comment: we have to figure out how to represent the colors.
@@ -16,6 +16,10 @@
 let colorPicker = document.querySelector("#colorPicker");
 
 let box1 = document.querySelector(".color1");
+let color2 = document.querySelector(".color2");
+let color3 = document.querySelector(".color3");
+let color4 = document.querySelector(".color4");
+let color5 = document.querySelector(".color5");
 
 let hex_color = document.querySelector(".hex_color");
 
@@ -41,9 +45,19 @@ function calculateColors() {
   baseColorRGB = hexToRgb(baseColor);
   baseColorHSL = rgbToHsl(baseColorRGB.r, baseColorRGB.g, baseColorRGB.b);
   console.log(baseColorRGB, baseColorHSL);
+  //const sliceHSL = baseColorHSL.
+  const h = baseColorHSL[0] + 10;
+  const s = baseColorHSL[1] + 10;
+  const l = baseColorHSL[2] + 10;
+  console.log(h, s, l);
 }
 
-function analog() {}
+// // to take element from the array
+// function analog(h, s, l) {
+//   baseColorHSL([0] + 10, [1] + 10, [2] + 10);
+//   console.log(h, s, l);
+// }
+
 // This is a Stackoverflow function
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
